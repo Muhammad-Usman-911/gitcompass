@@ -19,6 +19,7 @@ const pages: SearchItem[] = [
   { type: 'page', title: 'Challenges', subtitle: 'Game levels: solve real git situations', keywords: 'game levels quiz xp practice', body: '', href: '/challenges' },
   { type: 'page', title: 'GitHub settings tour', subtitle: 'Every repository settings page explained', keywords: 'settings repository github admin', body: '', href: '/github' },
   { type: 'page', title: 'CI/CD lab', subtitle: 'Pipelines and GitHub Actions from zero', keywords: 'ci cd pipeline actions workflow yaml deploy', body: '', href: '/cicd' },
+  { type: 'page', title: 'Changelog & PR writer', subtitle: 'Paste commits, get a CHANGELOG, PR description or release notes', keywords: 'changelog release notes pull request description pr template generator conventional commits semver version bump', body: '', href: '/changelog' },
   { type: 'page', title: 'Command reference', subtitle: 'Every git command with flags and examples', keywords: 'cheat sheet commands flags reference', body: '', href: '/commands' },
 ]
 

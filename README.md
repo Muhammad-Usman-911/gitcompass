@@ -34,7 +34,7 @@ Beginners pick where to start. Experienced developers press `Ctrl K`, type the p
 
 | | |
 |---|---|
-| 🔎 **Search everything** (`Ctrl K` or `/`) | Fuzzy search with a word-coverage re-rank across 61 guides, 17 GitHub settings, 39 commands, 16 challenges and 4 workflows. "git history rewrite" and "rewrite git history" both find the right guide. |
+| 🔎 **Search everything** (`Ctrl K` or `/`) | Fuzzy search with a word-coverage re-rank across 64 guides, 17 GitHub settings, 39 commands, 16 challenges and 4 workflows. "git history rewrite" and "rewrite git history" both find the right guide. |
 | 🗺️ **Learning paths** | Git from zero → Branching & merging → Remotes & GitHub sync → Fix mistakes & rewrite history → GitHub features → CI/CD. Start anywhere; progress is saved in your browser. |
 | 📖 **Guides with one shape** | When to use · How it works · **animated demo** · Step by step (copyable commands) · What can go wrong · How to undo · Pro tips · Related. |
 | 🖥️ **Git simulator** | A deterministic git engine written for the browser: commits, index, working tree, branches, merges with real conflicts, rebase, cherry-pick, revert, reset modes, stash, tags, reflog (`HEAD@{n}`), remotes with push/fetch/pull, `--force-with-lease`, and even `git filter-repo`. |
@@ -42,6 +42,7 @@ Beginners pick where to start. Experienced developers press `Ctrl K`, type the p
 | 🎮 **Challenges** | 16 game levels in 5 worlds (Basics → Rewrite), goals that tick off live, hints, XP and ranks from *Newcomer* to *History Wizard*. |
 | ⚙️ **GitHub settings tour** | Every item of a repository's Settings sidebar (Rulesets, Branches, Actions, Environments, Deploy keys, Secrets and variables…) with what it is, when to use it, setup steps, best practices and pitfalls. |
 | 🚀 **CI/CD lab** | Vocabulary, a pipeline you can run (and break with a bug to watch CI protect production), 11 lessons, and real workflow files explained line by line. |
+| 📝 **Changelog & PR writer** | Paste commit messages (`git log --oneline` output or plain subjects) and get a Keep a Changelog section, a pull request description or GitHub release notes, grouped into features, fixes and more, with links to commits and PRs and a suggested semver bump. Runs in the browser; nothing is uploaded. Guides: *Write a pull request people want to review*, *Turn commit messages into a changelog*, *Keep a changelog and release notes*. |
 | 🤖 **Compass, the 3D guide bot** | A three.js robot that follows your cursor, greets you on each page, flies next to the element it is explaining, and turns questions into searches. It can be hidden. |
 | 🌗 Light/dark theme, mobile-friendly, reduced-motion aware, keyboard friendly. |
 
@@ -56,6 +57,8 @@ Beginners pick where to start. Experienced developers press `Ctrl K`, type the p
 | <img src="docs/screenshots/07-github-tour.png" width="440" /> | <img src="docs/screenshots/08-cicd-pipeline.png" width="440" /> |
 | **Workflow explorer** | **3D guide bot tour** |
 | <img src="docs/screenshots/09-workflow-explorer.png" width="440" /> | <img src="docs/screenshots/12-bot-tour.png" width="440" /> |
+| **Changelog & PR writer** | **Generated PR description** |
+| <img src="docs/screenshots/15-changelog-tool.png" width="440" /> | <img src="docs/screenshots/16-pr-description.png" width="440" /> |
 
 <details>
 <summary>More screenshots</summary>

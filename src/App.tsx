@@ -13,6 +13,7 @@ const ChallengePage = lazy(() => import('./pages/ChallengePage'))
 const GitHubTour = lazy(() => import('./pages/GitHubTour'))
 const Cicd = lazy(() => import('./pages/Cicd'))
 const Commands = lazy(() => import('./pages/Commands'))
+const ChangelogWriter = lazy(() => import('./pages/ChangelogWriter'))
 const NotFound = lazy(() => import('./pages/NotFound'))
 
 function Loading() {
@@ -38,6 +39,7 @@ export default function App() {
                 <Route path="github/:id" element={<GitHubTour />} />
                 <Route path="cicd" element={<Cicd />} />
                 <Route path="commands" element={<Commands />} />
+                <Route path="changelog" element={<ChangelogWriter />} />
                 <Route path="*" element={<NotFound />} />
               </Route>
             </Routes>

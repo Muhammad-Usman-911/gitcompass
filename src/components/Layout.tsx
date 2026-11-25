@@ -16,6 +16,7 @@ const NAV = [
   { to: '/github', label: 'GitHub tour' },
   { to: '/cicd', label: 'CI/CD' },
   { to: '/commands', label: 'Commands' },
+  { to: '/changelog', label: 'Changelog' },
 ]
 
 export function Layout() {

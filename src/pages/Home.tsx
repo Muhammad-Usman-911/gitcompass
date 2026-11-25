@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'motion/react'
-import { ArrowRight, Gamepad2, Search, Settings, SquareTerminal, Workflow, Sparkles } from 'lucide-react'
+import { ArrowRight, Gamepad2, Search, Settings, SquareTerminal, Workflow, Sparkles, ScrollText, BookMarked } from 'lucide-react'
 import { guidesForPath, paths, guideById } from '@/content'
 import { iconFor } from '@/lib/icons'
 import { useSearch } from '@/components/SearchPalette'
@@ -136,6 +136,8 @@ export default function Home() {
             { to: '/challenges', icon: Gamepad2, color: '#f472b6', title: 'Challenges', text: '16 game levels from “first commit” to “scrub a leaked API key”. Earn XP, rank up, and learn by fixing real situations.' },
             { to: '/github', icon: Settings, color: '#fbbf24', title: 'GitHub settings tour', text: 'Rulesets, Environments, Deploy keys, Secrets… every repository setting explained: what it is, when to use it, best practices.' },
             { to: '/cicd', icon: Workflow, color: '#a78bfa', title: 'CI/CD lab', text: 'What a pipeline is, an animated run of a GitHub Actions workflow, and real workflow files explained line by line.' },
+            { to: '/changelog', icon: ScrollText, color: '#34d399', title: 'Changelog & PR writer', text: 'Paste your commits and get a tidy CHANGELOG section, a pull request description or release notes, grouped into features and fixes, with a suggested version.' },
+            { to: '/commands', icon: BookMarked, color: '#60a5fa', title: 'Command reference', text: 'Every git command you will actually use, with the flags that matter, examples, and a warning on the ones that can destroy work.' },
           ].map((f, i) => (
             <motion.div key={f.to} {...fadeUp} transition={{ delay: i * 0.06 }}>
               <Link to={f.to} className="card-3d group flex h-full gap-4 rounded-2xl border bg-card p-6">

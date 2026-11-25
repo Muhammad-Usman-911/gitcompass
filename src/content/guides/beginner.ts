@@ -191,7 +191,7 @@ export const beginnerGuides: Guide[] = [
       'Explain **why** in the body; the diff already shows **what**.',
       'Fix a message you just made with `git commit --amend` (only if not pushed yet).',
     ],
-    related: ['staging-and-committing', 'amend-last-commit', 'squash-commits', 'open-a-pull-request'],
+    related: ['staging-and-committing', 'amend-last-commit', 'squash-commits', 'open-a-pull-request', 'commits-to-changelog'],
   },
   {
     id: 'gitignore',
