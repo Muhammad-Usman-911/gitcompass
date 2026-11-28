@@ -20,10 +20,8 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden">
+      <section className="relative">
         <div className="bg-grid absolute inset-0" />
-        <div className="pointer-events-none absolute -left-32 -top-32 h-[28rem] w-[28rem] rounded-full bg-cyan-500/20 blur-[110px]" />
-        <div className="pointer-events-none absolute -right-24 top-20 h-[26rem] w-[26rem] rounded-full bg-violet-500/20 blur-[110px]" />
         <div className="container relative grid items-center gap-12 py-16 lg:grid-cols-[1.05fr_1fr] lg:py-24">
           <div className="animate-fade-up">
             <span className="inline-flex items-center gap-2 rounded-full border bg-card/60 px-3 py-1 text-xs text-muted-foreground backdrop-blur">

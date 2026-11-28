@@ -7,9 +7,9 @@ type Size = 'sm' | 'md' | 'lg' | 'icon'
 const variants: Record<Variant, string> = {
   default: 'bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm',
   secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
-  outline: 'border bg-transparent hover:bg-secondary/60',
+  outline: 'border bg-card shadow-glass backdrop-blur-xl hover:bg-secondary',
   ghost: 'hover:bg-secondary/70',
-  gradient: 'text-white bg-[linear-gradient(110deg,hsl(var(--primary)),hsl(var(--accent)))] hover:brightness-110 shadow-[0_8px_30px_-8px_hsl(var(--primary)/.6)]',
+  gradient: 'btn-gloss text-white hover:brightness-110 hover:-translate-y-px',
   destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90',
 }
 const sizes: Record<Size, string> = {
@@ -28,7 +28,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ className, v
   <button
     ref={ref}
     className={cn(
-      'inline-flex items-center justify-center whitespace-nowrap rounded-lg font-medium transition-all active:scale-[.98] disabled:pointer-events-none disabled:opacity-50',
+      'inline-flex items-center justify-center whitespace-nowrap rounded-xl font-semibold transition-all active:scale-[.98] disabled:pointer-events-none disabled:opacity-50',
       variants[variant],
       sizes[size],
       className,
@@ -39,4 +39,4 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ className, v
 Button.displayName = 'Button'
 
 export const buttonClass = (variant: Variant = 'default', size: Size = 'md', className?: string) =>
-  cn('inline-flex items-center justify-center whitespace-nowrap rounded-lg font-medium transition-all active:scale-[.98]', variants[variant], sizes[size], className)
+  cn('inline-flex items-center justify-center whitespace-nowrap rounded-xl font-semibold transition-all active:scale-[.98]', variants[variant], sizes[size], className)

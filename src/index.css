@@ -4,48 +4,64 @@
 
 @layer base {
   :root {
-    --background: 220 33% 98%;
-    --foreground: 224 30% 12%;
+    --background: 228 45% 96%;
+    --foreground: 230 35% 11%;
     --card: 0 0% 100%;
+    --card-a: 0.58;
+    --secondary-a: 0.55;
+    --popover-a: 0.82;
+    --border-a: 0.12;
+    --hi-a: 0.7;
+    --drop-a: 0.18;
+    --term-a: 0.92;
+    --aurora-a: 0.42;
     --card-foreground: 224 30% 12%;
     --popover: 0 0% 100%;
     --popover-foreground: 224 30% 12%;
-    --primary: 189 94% 38%;
+    --primary: 189 94% 34%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 220 20% 93%;
+    --secondary: 0 0% 100%;
     --secondary-foreground: 224 30% 15%;
-    --muted: 220 20% 94%;
-    --muted-foreground: 220 10% 40%;
+    --muted: 0 0% 100%;
+    --muted-foreground: 228 14% 36%;
     --accent: 258 80% 60%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 72% 50%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 16% 86%;
-    --input: 220 16% 86%;
+    --border: 230 35% 20%;
+    --input: 230 35% 20%;
     --ring: 189 94% 38%;
     --radius: 0.85rem;
     --grid: 220 20% 80%;
     --term: 222 40% 8%;
   }
   .dark {
-    --background: 225 40% 6%;
-    --foreground: 220 30% 94%;
-    --card: 225 32% 9%;
+    --background: 230 45% 5%;
+    --foreground: 220 40% 96%;
+    --card: 228 40% 14%;
+    --card-a: 0.42;
+    --secondary-a: 0.07;
+    --popover-a: 0.78;
+    --border-a: 0.11;
+    --hi-a: 0.09;
+    --drop-a: 0.6;
+    --term-a: 0.78;
+    --aurora-a: 0.4;
     --card-foreground: 220 30% 94%;
-    --popover: 225 32% 10%;
+    --popover: 230 40% 10%;
     --popover-foreground: 220 30% 94%;
     --primary: 188 86% 53%;
     --primary-foreground: 225 40% 8%;
-    --secondary: 225 22% 15%;
+    --secondary: 0 0% 100%;
     --secondary-foreground: 220 30% 94%;
-    --muted: 225 22% 13%;
-    --muted-foreground: 220 14% 64%;
+    --muted: 0 0% 100%;
+    --muted-foreground: 222 22% 72%;
     --accent: 258 90% 74%;
     --accent-foreground: 225 40% 8%;
     --destructive: 0 80% 63%;
     --destructive-foreground: 0 0% 100%;
-    --border: 225 20% 17%;
-    --input: 225 20% 19%;
+    --border: 0 0% 100%;
+    --input: 0 0% 100%;
     --ring: 188 86% 53%;
     --grid: 225 25% 16%;
     --term: 228 45% 4%;
@@ -57,11 +73,16 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-background font-sans text-foreground antialiased;
     font-feature-settings: 'cv11', 'ss01';
   }
   ::selection {
     background: hsl(var(--primary) / 0.3);
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display tracking-tight;
   }
   :focus-visible {
     outline: 2px solid hsl(var(--ring));
@@ -88,13 +109,69 @@
     @apply animate-shimmer;
   }
   .bg-grid {
-    background-image: linear-gradient(hsl(var(--grid) / 0.55) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--grid) / 0.55) 1px, transparent 1px);
+    background-image: linear-gradient(hsl(var(--foreground) / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--foreground) / 0.06) 1px, transparent 1px);
     background-size: 44px 44px;
-    mask-image: radial-gradient(ellipse at 50% 0%, black 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 0%, black 30%, transparent 75%), linear-gradient(to bottom, black 40%, transparent 92%);
+    -webkit-mask-composite: source-in;
+    mask-image: radial-gradient(ellipse at 50% 0%, black 30%, transparent 75%), linear-gradient(to bottom, black 40%, transparent 92%);
+    mask-composite: intersect;
   }
   .glass {
-    @apply border bg-card/70 backdrop-blur-xl;
+    @apply border bg-card shadow-glass backdrop-blur-2xl backdrop-saturate-150;
+  }
+  /* Every card-like surface in the app is frosted glass. */
+  [class~='bg-card'],
+  [class*='bg-card/'],
+  [class~='bg-popover'],
+  [class*='bg-popover/'] {
+    -webkit-backdrop-filter: blur(22px) saturate(150%);
+    backdrop-filter: blur(22px) saturate(150%);
+  }
+  [class~='bg-card'].border,
+  [class*='bg-card/'].border {
+    box-shadow: inset 0 1px 0 0 hsl(0 0% 100% / var(--hi-a)), 0 18px 50px -26px hsl(230 60% 3% / var(--drop-a));
+  }
+  .bg-term {
+    background: hsl(var(--term) / var(--term-a));
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+  }
+  /* Glossy gradient fill used by primary buttons. */
+  .btn-gloss {
+    background: linear-gradient(180deg, hsl(0 0% 100% / 0.22), hsl(0 0% 100% / 0) 55%),
+      linear-gradient(110deg, hsl(var(--primary)), hsl(var(--accent)) 60%, #f472b6);
+    box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.35), 0 10px 30px -10px hsl(var(--primary) / 0.7), 0 4px 14px -6px hsl(var(--accent) / 0.6);
+  }
+  /* Aurora background: blurred colour blobs behind the glass. */
+  .aurora {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .aurora > span {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(80px);
+    opacity: var(--aurora-a);
+    @apply animate-aurora;
+  }
+  .aurora::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: radial-gradient(ellipse 80% 60% at 50% 40%, transparent 30%, hsl(var(--background) / 0.55) 100%);
+  }
+  .aurora::after {
+    content: '';
+    z-index: 2;
+    position: absolute;
+    inset: 0;
+    opacity: 0.06;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
   .glow {
     box-shadow: 0 0 0 1px hsl(var(--primary) / 0.15), 0 10px 40px -10px hsl(var(--primary) / 0.35);
@@ -105,7 +182,7 @@
   }
   .card-3d:hover {
     transform: perspective(900px) rotateX(3deg) translateY(-3px);
-    box-shadow: 0 18px 50px -18px hsl(var(--primary) / 0.45);
+    box-shadow: inset 0 1px 0 0 hsl(0 0% 100% / calc(var(--hi-a) * 1.6)), 0 24px 60px -22px hsl(var(--primary) / 0.55);
     border-color: hsl(var(--primary) / 0.45);
   }
   .tour-highlight {

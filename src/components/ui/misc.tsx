@@ -2,7 +2,7 @@ import type { HTMLAttributes, ReactNode } from 'react'
 import { cn } from '@/lib/utils'
 
 export function Card({ className, ...p }: HTMLAttributes<HTMLDivElement>) {
-  return <div className={cn('rounded-xl border bg-card text-card-foreground', className)} {...p} />
+  return <div className={cn('rounded-2xl border bg-card text-card-foreground', className)} {...p} />
 }
 
 export function Badge({ className, color, children }: { className?: string; color?: string; children: ReactNode }) {

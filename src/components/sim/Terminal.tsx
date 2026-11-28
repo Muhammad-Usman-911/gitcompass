@@ -74,7 +74,7 @@ export function Terminal({ sim, className, readOnly, placeholder, prompt = '~/pr
 
   return (
     <div
-      className={cn('flex min-h-0 flex-col overflow-hidden rounded-xl border border-white/10 bg-[hsl(var(--term))] font-mono text-[13px] shadow-2xl', className)}
+      className={cn('flex min-h-0 flex-col overflow-hidden rounded-xl border border-white/10 bg-term font-mono text-[13px] shadow-2xl', className)}
       onClick={() => input.current?.focus()}
     >
       <div className="flex items-center gap-1.5 border-b border-white/10 px-3 py-2">
