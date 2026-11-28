@@ -15,7 +15,7 @@ export function CodeBlock({ code, className, lang = 'bash' }: { code: string; cl
   }
   const isShell = lang === 'bash'
   return (
-    <div className={cn('group relative overflow-hidden rounded-lg border bg-[hsl(var(--term))]', className)}>
+    <div className={cn('group relative overflow-hidden rounded-lg border bg-term', className)}>
       <button
         onClick={copy}
         aria-label="Copy code"

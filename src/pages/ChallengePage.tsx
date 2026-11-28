@@ -130,7 +130,7 @@ function ChallengeRunner({ id }: { id: string }) {
               )}
             </div>
             {showSolution && (
-              <pre className="mt-3 overflow-x-auto rounded-lg bg-[hsl(var(--term))] p-3 font-mono text-xs text-slate-200">
+              <pre className="mt-3 overflow-x-auto rounded-lg bg-term p-3 font-mono text-xs text-slate-200">
                 {c.solution.map((s) => (s === '__REFLOG_INVOICES__' ? 'git reflog\ngit reset --hard <id of "commit: Add invoices">' : s)).join('\n')}
               </pre>
             )}

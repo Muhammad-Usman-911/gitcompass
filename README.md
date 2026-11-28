@@ -44,7 +44,7 @@ Beginners pick where to start. Experienced developers press `Ctrl K`, type the p
 | 🚀 **CI/CD lab** | Vocabulary, a pipeline you can run (and break with a bug to watch CI protect production), 11 lessons, and real workflow files explained line by line. |
 | 📝 **Changelog & PR writer** | Paste commit messages (`git log --oneline` output or plain subjects) and get a Keep a Changelog section, a pull request description or GitHub release notes, grouped into features, fixes and more, with links to commits and PRs and a suggested semver bump. Runs in the browser; nothing is uploaded. Guides: *Write a pull request people want to review*, *Turn commit messages into a changelog*, *Keep a changelog and release notes*. |
 | 🤖 **Compass, the 3D guide bot** | A three.js robot that follows your cursor, greets you on each page, flies next to the element it is explaining, and turns questions into searches. It can be hidden. |
-| 🌗 Light/dark theme, mobile-friendly, reduced-motion aware, keyboard friendly. |
+| 🌗 Frosted-glass "aurora" UI in light and dark themes, mobile-friendly, reduced-motion aware, keyboard friendly. |
 
 ## Screenshots
 

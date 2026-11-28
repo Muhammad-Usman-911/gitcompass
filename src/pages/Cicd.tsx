@@ -120,7 +120,7 @@ function PipelineSim() {
           })}
         </div>
       </div>
-      <div ref={logBox} className="scrollbar-thin mt-4 h-56 overflow-y-auto rounded-xl border border-white/10 bg-[hsl(var(--term))] p-3 font-mono text-xs leading-6">
+      <div ref={logBox} className="scrollbar-thin mt-4 h-56 overflow-y-auto rounded-xl border border-white/10 bg-term p-3 font-mono text-xs leading-6">
         {!logs.length && <span className="text-slate-500">Logs appear here, like the Actions tab on GitHub.</span>}
         <AnimatePresence initial={false}>
           {logs.map((l, i) => (
@@ -175,7 +175,7 @@ function WorkflowExplorer() {
         <Markup text={w.summary} />
       </p>
       <div className="mt-4 grid gap-4 lg:grid-cols-[1.25fr_1fr]">
-        <div className="overflow-hidden rounded-xl border border-white/10 bg-[hsl(var(--term))]">
+        <div className="overflow-hidden rounded-xl border border-white/10 bg-term">
           <div className="border-b border-white/10 px-4 py-2 font-mono text-xs text-slate-400">{w.file}</div>
           <pre className="scrollbar-thin max-h-[34rem] overflow-auto py-2 font-mono text-[12.5px] leading-6 text-slate-200">
             {lines.map((l, i) => {
